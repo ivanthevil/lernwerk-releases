@@ -19,6 +19,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       REPOSITORY: ${{ github.repository }}
       VERSION: ${{ inputs.version }}
+      GODEBUG: http2client=0
     steps:
       - name: Verify parts, assemble installer, and publish
         shell: bash
@@ -29,7 +30,7 @@ jobs:
           assert re.fullmatch(r'\d+\.\d+\.\d+',version)
           tag='v'+version; filename=f'Lernwerk-Setup-{version}.exe'
           def gh(*args):
-              return subprocess.check_output(['gh',*args],text=True,timeout=300)
+              return subprocess.check_output(['gh',*args],text=True,timeout=900 if args[:2]==('release','upload') else 300)
           def release():
               releases=json.loads(gh('api',f'repos/{repo}/releases?per_page=100'))
               matches=[r for r in releases if r['tag_name']==tag]
@@ -60,6 +61,7 @@ jobs:
           with installer.open('rb') as f: assert f.read(2)==b'MZ'
           assert pathlib.Path('SHA256SUMS.txt').read_text().strip()==manifest['sha256']+'  '+filename
           for attempt in range(3):
+              print('Uploading verified installer, attempt',attempt+1,flush=True)
               data=release(); assert data['draft']
               existing=next((a for a in data['assets'] if a['name']==filename),None)
               if existing and existing['size']==manifest['size'] and existing.get('digest')=='sha256:'+manifest['sha256']:
