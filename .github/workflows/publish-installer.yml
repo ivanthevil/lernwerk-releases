@@ -31,12 +31,19 @@ jobs:
           def gh(*args):
               return subprocess.check_output(['gh',*args],text=True,timeout=300)
           def release():
-              result=json.loads(gh('api',f'repos/{repo}/releases/tags/{tag}'))
+              releases=json.loads(gh('api',f'repos/{repo}/releases?per_page=100'))
+              matches=[r for r in releases if r['tag_name']==tag]
+              assert len(matches)==1, 'Expected exactly one release for this tag'
+              result=matches[0]
               pages=json.loads(gh('api','--paginate','--slurp',f'repos/{repo}/releases/{result["id"]}/assets?per_page=100'))
               result['assets']=[asset for page in pages for asset in page]
               return result
           data=release(); assert data['draft'], 'Never replace a published release'
-          gh('release','download',tag,'--repo',repo,'--pattern','upload-manifest.json','--pattern','SHA256SUMS.txt','--pattern',filename+'.part*')
+          for asset in data['assets']:
+              name=asset['name']
+              if name in ('upload-manifest.json','SHA256SUMS.txt') or re.fullmatch(re.escape(filename)+r'\.part\d{4}',name):
+                  with open(name,'wb') as output:
+                      subprocess.run(['gh','api',f'repos/{repo}/releases/assets/{asset["id"]}','-H','Accept: application/octet-stream'],stdout=output,check=True,timeout=300)
           manifest=json.loads(pathlib.Path('upload-manifest.json').read_text())
           assert manifest['version']==version and manifest['filename']==filename
           assert 1<=manifest['size']<=2*1024**3 and 1<=len(manifest['parts'])<=512
