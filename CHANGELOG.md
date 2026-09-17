@@ -1,5 +1,13 @@
 # Versionshinweise
 
+## 0.2.4
+
+- Quiz-Antworten werden direkt nach der Auswahl ausgewertet: richtige Antwort grün, falsche Auswahl rot, mit zusätzlichen Textkennzeichnungen.
+- Die Erklärung erscheint sofort und benötigt keinen zusätzlichen KI-Aufruf. Die erste Auswahl bleibt für den Versuch bestehen; zur nächsten Frage geht es erst auf Wunsch.
+- „Diese Antwort mit dem Tutor besprechen“ setzt eine passende Frage ins Eingabefeld. Der Tutor kennt die gewählte Antwort und den richtigen Lösungsweg. Gesendet wird erst mit „Fragen“.
+- Rückmeldungen bleiben beim Wechseln zwischen Fragen und nach erneutem Öffnen des gespeicherten Versuchs sichtbar.
+- Probeklausuren behalten ihre Prüfungsbedingungen. Kleines Differenzupdate auf Basis von 0.2.3.
+
 ## 0.2.3
 
 - Dateibasierte Differenzupdates: 17,3 MB statt 326,8 MB für dieses Update. 967 unveränderte Programmdateien werden auf dem PC weiterverwendet und mit SHA-256 geprüft.
