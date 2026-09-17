@@ -18,6 +18,8 @@ Ab Version 0.2.0 prüft die Windows-App nach dem Start und anschließend alle se
 
 Eine neue Version wird in der App angezeigt. **Herunterladen & installieren** lädt den Installer, prüft seine SHA-256-Prüfsumme und öffnet den Installationsassistenten. Lernwerk schließt sich dazu. Laufende Aufgaben und Sprachgespräche müssen vorher beendet werden. Updates werden nicht ohne Klick installiert.
 
+Ab Version 0.2.2 können unterbrochene Downloads fortgesetzt werden, auch nach einem Neustart. Falls der Download in einer älteren Version hängen bleibt, den aktuellen Installer über den Download-Link oben herunterladen und nach dem vollständigen Beenden von Lernwerk ausführen.
+
 Konten, Lernfortschritt, Dateien und Einstellungen liegen getrennt vom Programm. Updates und die Deinstallation behalten diese Daten. Standardordner: `%LOCALAPPDATA%\Lernwerk`; eine vorhandene, von Windows umgeleitete Datenablage wird wiederverwendet. Regelmäßige eigene Datensicherungen sind möglich, indem die App beendet und der gesamte Datenordner kopiert wird.
 
 ## Gemeinsames Lernen
