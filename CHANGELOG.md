@@ -1,6 +1,11 @@
 # Versionshinweise
 
-## 0.2.2 – vorbereitet, Download noch nicht veröffentlicht
+## 0.2.3
+
+- Dateibasierte Differenzupdates: 17,3 MB statt 326,8 MB für dieses Update. 967 unveränderte Programmdateien werden auf dem PC weiterverwendet und mit SHA-256 geprüft.
+- Der Installer lädt eine fehlende oder beschädigte Basis bei Bedarf automatisch nach. Bei Erstinstallationen ist daher eine Internetverbindung erforderlich. Ältere veröffentlichte Versionen bleiben als Basis verfügbar.
+- Der Veröffentlichungsablauf verwendet beim nächsten Build den verifizierten Stand der zuletzt veröffentlichten Version und entfernt vor der Freigabe alle temporären Uploadteile.
+- Enthält die folgenden Verbesserungen der nicht veröffentlichten Version 0.2.2:
 
 - Update-Downloads setzen nach Verbindungsabbrüchen bereits geladene Daten fort, auch nach einem Neustart. Größe und SHA-256 des vollständigen Installers werden vor der Installation geprüft.
 - Module können im Überblick mit Bestätigung ihres Namens gelöscht werden. Die Löschung wird mit dem Lernpartner synchronisiert; beide benötigen Version 0.2.2 oder neuer. Quelldateien und ältere Drive-Sicherungspakete bleiben als Sicherheitskopien erhalten.
