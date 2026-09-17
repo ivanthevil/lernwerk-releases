@@ -1,5 +1,12 @@
 # Versionshinweise
 
+## 0.2.1
+
+- Schnellere direkte Google-Verbindungen unter Windows bei nicht erreichbarem IPv6, mit Rückfall auf die normale Netzwerkauswahl bei Verbindungsfehlern.
+- Vorhandene Proxy-Einstellungen bleiben erhalten.
+- Verständliche Meldung nach 90 Sekunden ohne Antwort bei der Ordnerauswahl.
+- Konten, Lernunterlagen und Einstellungen bleiben erhalten.
+
 ## 0.2.0
 
 - Windows-Installer mit Startmenü-Eintrag und optionaler Desktop-Verknüpfung.
