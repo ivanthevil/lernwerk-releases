@@ -1,6 +1,6 @@
 # Versionshinweise
 
-## 0.2.1
+## 0.2.1 – vorbereitet, Download noch nicht veröffentlicht
 
 - Schnellere direkte Google-Verbindungen unter Windows bei nicht erreichbarem IPv6, mit Rückfall auf die normale Netzwerkauswahl bei Verbindungsfehlern.
 - Vorhandene Proxy-Einstellungen bleiben erhalten.
