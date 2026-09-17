@@ -1,0 +1,70 @@
+name: Assemble verified Windows release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version of an existing draft with verified upload parts
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: publish-${{ inputs.version }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPOSITORY: ${{ github.repository }}
+      VERSION: ${{ inputs.version }}
+    steps:
+      - name: Verify parts, assemble installer, and publish
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re, subprocess, time
+          version=os.environ['VERSION']; repo=os.environ['REPOSITORY']
+          assert re.fullmatch(r'\d+\.\d+\.\d+',version)
+          tag='v'+version; filename=f'Lernwerk-Setup-{version}.exe'
+          def gh(*args):
+              return subprocess.check_output(['gh',*args],text=True,timeout=300)
+          def release():
+              return json.loads(gh('api',f'repos/{repo}/releases/tags/{tag}'))
+          data=release(); assert data['draft'], 'Never replace a published release'
+          gh('release','download',tag,'--repo',repo,'--pattern','upload-manifest.json','--pattern','SHA256SUMS.txt','--pattern',filename+'.part*')
+          manifest=json.loads(pathlib.Path('upload-manifest.json').read_text())
+          assert manifest['version']==version and manifest['filename']==filename
+          assert 1<=manifest['size']<=2*1024**3 and 1<=len(manifest['parts'])<=512
+          assert re.fullmatch(r'[a-f0-9]{64}',manifest['sha256'])
+          with open(filename,'wb') as output:
+              for index,part in enumerate(manifest['parts']):
+                  assert part['name']==f'{filename}.part{index:04d}'
+                  content=pathlib.Path(part['name']).read_bytes()
+                  assert len(content)==part['size'] and hashlib.sha256(content).hexdigest()==part['sha256']
+                  output.write(content)
+          installer=pathlib.Path(filename)
+          assert installer.stat().st_size==manifest['size']
+          assert hashlib.file_digest(installer.open('rb'),'sha256').hexdigest()==manifest['sha256']
+          with installer.open('rb') as f: assert f.read(2)==b'MZ'
+          assert pathlib.Path('SHA256SUMS.txt').read_text().strip()==manifest['sha256']+'  '+filename
+          for attempt in range(3):
+              data=release(); assert data['draft']
+              existing=next((a for a in data['assets'] if a['name']==filename),None)
+              if existing and existing['size']==manifest['size'] and existing.get('digest')=='sha256:'+manifest['sha256']:
+                  break
+              if existing: gh('api','--method','DELETE',f'repos/{repo}/releases/assets/{existing["id"]}')
+              try: gh('release','upload',tag,filename,'--repo',repo)
+              except subprocess.SubprocessError:
+                  if attempt==2: raise
+                  time.sleep(3)
+          data=release(); assert data['draft']
+          asset=next(a for a in data['assets'] if a['name']==filename)
+          assert asset['size']==manifest['size'] and asset.get('digest')=='sha256:'+manifest['sha256']
+          temporary={p['name'] for p in manifest['parts']}|{'upload-manifest.json'}
+          for asset in data['assets']:
+              if asset['name'] in temporary: gh('api','--method','DELETE',f'repos/{repo}/releases/assets/{asset["id"]}')
+          gh('release','edit',tag,'--repo',repo,'--draft=false','--latest')
+          print('Published verified installer:',tag,manifest['sha256'])
+          PY
