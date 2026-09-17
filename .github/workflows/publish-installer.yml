@@ -31,7 +31,10 @@ jobs:
           def gh(*args):
               return subprocess.check_output(['gh',*args],text=True,timeout=300)
           def release():
-              return json.loads(gh('api',f'repos/{repo}/releases/tags/{tag}'))
+              result=json.loads(gh('api',f'repos/{repo}/releases/tags/{tag}'))
+              pages=json.loads(gh('api','--paginate','--slurp',f'repos/{repo}/releases/{result["id"]}/assets?per_page=100'))
+              result['assets']=[asset for page in pages for asset in page]
+              return result
           data=release(); assert data['draft'], 'Never replace a published release'
           gh('release','download',tag,'--repo',repo,'--pattern','upload-manifest.json','--pattern','SHA256SUMS.txt','--pattern',filename+'.part*')
           manifest=json.loads(pathlib.Path('upload-manifest.json').read_text())
@@ -65,6 +68,13 @@ jobs:
           temporary={p['name'] for p in manifest['parts']}|{'upload-manifest.json'}
           for asset in data['assets']:
               if asset['name'] in temporary: gh('api','--method','DELETE',f'repos/{repo}/releases/assets/{asset["id"]}')
-          gh('release','edit',tag,'--repo',repo,'--draft=false','--latest')
+          pathlib.Path('publish.json').write_text(json.dumps({'tag_name':tag,'target_commitish':'main','name':'Lernwerk '+version,'body':data.get('body',''),'draft':False,'make_latest':'true'}))
+          for attempt in range(3):
+              try:
+                  gh('api','--method','PATCH',f'repos/{repo}/releases/{data["id"]}','--input','publish.json')
+                  break
+              except subprocess.SubprocessError:
+                  if attempt==2: raise
+                  time.sleep(3)
           print('Published verified installer:',tag,manifest['sha256'])
           PY
