@@ -1,5 +1,13 @@
 # Versionshinweise
 
+## 0.2.5
+
+- Mathematikdarstellung in Tutor, Zusammenfassungen, Aufgaben, Quiz-Optionen und Karteikarten: Brüche, Wurzeln, Indizes, Integrale, Summen, Matrizen und griechische Zeichen. Mehrere übliche LaTeX-Begrenzungen werden erkannt.
+- Berechnete 2D-Funktionsgraphen und Diagramme aus Wertepaaren mit mehreren Datenreihen, Achsen und einsehbaren Gleichungen/Werten.
+- PDF-Exporte und druckbare Karten behalten Formeln und Diagramme. Fehlerhafte Formeln und überfüllte Karten werden vor dem Druck gemeldet.
+- Zusammenfassungen fragen nicht länger nach einer Fragen-/Kartenanzahl.
+- Differenzupdate auf Basis von 0.2.4; Lernmaterial, Konten und Einstellungen bleiben erhalten.
+
 ## 0.2.4
 
 - Quiz-Antworten werden direkt nach der Auswahl ausgewertet: richtige Antwort grün, falsche Auswahl rot, mit zusätzlichen Textkennzeichnungen.
