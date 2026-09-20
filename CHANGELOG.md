@@ -1,5 +1,20 @@
 # Versionshinweise
 
+## 0.3.2 – Klarere Bedienung und schnellerer Abgleich
+
+Dieses Update verbessert die Bedienung beim gemeinsamen Lernen:
+
+- Größere Navigation, deutlich erkennbare Modul-Tabs und sichtbare Zurück-Schaltflächen.
+- Modulkarten lassen sich auf ihrer gesamten Fläche öffnen.
+- Quellenaktionen sind übersichtlich unter „Aktionen“ erreichbar. Quellen können umbenannt werden; Originaldatei und Dateiendung bleiben erhalten.
+- Das Löschen einer Quelle erfordert das aktuelle Passwort des angemeldeten Kontos. Falsche Eingaben löschen nichts.
+- Organisation zeigt kommende Termine. Im neuen Monatskalender bleiben auch vergangene Termine und ungeprüfte Vorschläge auffindbar. Nach Terminbeginn erscheinen keine neuen Erinnerungen mehr.
+- Automatischer Drive-Abgleich alle 30 Sekunden statt alle fünf Minuten, unabhängig von belegten KI-Arbeitsplätzen. Neue Inhalte erscheinen nach dem Abgleich automatisch. Große Dateien benötigen weiterhin ihre Übertragungszeit; beide PCs müssen Lernwerk geöffnet und den automatischen Abgleich aktiviert haben.
+- Neue, mit Higgsfield gestaltete Tiefbau-Illustration auf der Startseite.
+- Enthält die Passwort-Wiederherstellung aus Version 0.3.1.
+
+Das Update enthält nur geänderte und neue Programmdateien. Vorhandene Lerndaten, Konten und Fortschritte bleiben erhalten. Fehlende Basisdateien werden bei Bedarf aus den vorherigen geprüften Installern ergänzt.
+
 ## 0.3.1
 
 Lernwerk 0.3.1 ergänzt die Wiederherstellung des eigenen Kontozugangs.

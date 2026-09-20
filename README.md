@@ -47,3 +47,9 @@ Der Vorlesungsmodus ist eine Vorschau für die lokale Windows-App. Präsentation
 Ab Version 0.3.1 findest du in der Anmeldung **Passwort vergessen?**. Bestätige die Anfrage im lokalen Lernwerk-Windows-Fenster oder verwende deinen zuvor gesicherten Wiederherstellungscode. Danach setzt du selbst ein neues Passwort. Dein Konto und dein Lernfortschritt bleiben erhalten.
 
 Unter **Einstellungen → Mein Konto & Passwort** kannst du einen Code erstellen und sicher ablegen. Jeder Code gilt nur für das eigene lokale Konto, wird nicht über Drive geteilt und ist nur einmal verwendbar. Eine Passwortänderung macht alte Anmeldungen und den bisherigen Code ungültig.
+
+## Bedienung und gemeinsamer Abgleich
+
+Ab Version 0.3.2 sind Modulkarten vollständig anklickbar. Quellen können über **Aktionen** umbenannt, verschoben oder nach Eingabe des eigenen aktuellen Passworts gelöscht werden. **Organisation** zeigt kommende Termine; der Monatskalender enthält auch vergangene Einträge. Nach Terminbeginn erscheinen keine neuen Erinnerungen.
+
+Der automatische Drive-Abgleich läuft alle 30 Sekunden und unabhängig von langen KI-Aufträgen. Neue Inhalte erscheinen nach der Übertragung automatisch. Große Dateien benötigen weiterhin Übertragungszeit. Dafür auf beiden PCs Lernwerk öffnen und den automatischen Abgleich aktivieren.
