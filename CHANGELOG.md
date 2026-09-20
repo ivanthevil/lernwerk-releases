@@ -1,5 +1,21 @@
 # Versionshinweise
 
+## 0.3.0
+
+Lernwerk 0.3.0 verbindet Seminarorganisation, Rechenübungen und einen interaktiven Lehrer.
+
+- **Module und Quellen:** „Modul bearbeiten“ und „Modul löschen“ stehen direkt im Modulkopf. Das Löschen gemeinsamer Module bleibt dem Verwalter vorbehalten. Quellen lassen sich verschieben oder mit Dateinamenbestätigung aus dem Lernbereich entfernen. Löschungen werden abgeglichen; ältere Materialien und Originaldateien bleiben erhalten.
+- **Prüfungstipps:** eigener Reiter für Hinweise und Altklausuren. Neue Lernmaterialien berücksichtigen diese als Niveauvorlage. Für Prüfungen reservierte Quellen bleiben vom normalen Üben ausgeschlossen.
+- **Seminarplan und Schulaufgaben:** Termine aus Organisationsunterlagen werden als prüfbare Vorschläge angelegt. Manuelle Termine und Uploads pro Seminar sind möglich. Die KI kann belegte Arbeitsaufträge mit Fristen erkennen; Erledigt-Haken gelten pro Person. Automatische Erkennung nach passenden Uploads lässt sich unter Einstellungen → Budget & Nutzung abschalten. Sie nutzt den API-Schlüssel und das Budget.
+- **Aktuelle Prüfungsvorbereitung:** Quellenänderungen aktualisieren bestehende offene Pläne. Ältere Lernmaterialien werden gekennzeichnet; neue Übungen nutzen den aktuellen Stand. Bereits erledigte Einheiten bleiben erhalten.
+- **Rechenaufgaben:** vollständige Aufgabenstellungen, Zahlenergebnis mit Einheit, optionale Formel-Eingabe mit Vorschau, Ergebnisprüfung oder Musterlösung auf Wunsch. Ohne Sofortprüfung erfolgt Rückmeldung bei Abgabe. Zahlenresultate werden lokal geprüft; Rechenwege bleiben für den Tutor erhalten, erhalten in diesem Modus aber keine automatischen Teilpunkte.
+- **KI-Lehrer:** Dialog mit schrittweiser Tafel, Formeln, Pfeilen und Grundlagen. Textantworten fließen in den nächsten Unterrichtsschritt und persönlichen Lernschwerpunkt ein. Ein bestehender offener Lernplan wird angepasst. Der Sprachlehrer kann Tafelschritte zeigen und auch Texteingaben entgegennehmen. Sprache benötigt separat verfügbaren Realtime-Modellzugang; bestehende Zeit- und Budgetgrenzen gelten weiter.
+- **Vorlesungsmodus (Vorschau):** in der lokalen Windows-App ein geöffnetes Teams-Präsentationsfenster wählen, ausschließlich die Folienfläche markieren und ein Wiedergabegerät wählen. Ton und zugeschnittenes Bild werden fortlaufend auf Festplatte gespeichert. Pausen, reiner Ton, Ausblenden des Bildes, Wiederaufnahme gespeicherter Daten und Übergabe an Transkription/Bildanalyse sind vorgesehen. Optionale KI-Notizen entstehen abschnittsweise, ungefähr alle fünf Minuten. Bei Rückstand wird nicht jeder Abschnitt live analysiert; die vollständige Datei wird anschließend verarbeitet.
+
+Die Aufnahme erkennt Teilnehmerbilder nicht automatisch. Beim Ende der Präsentation „Bild ausblenden“ wählen; Teams nicht minimieren. Der Ton enthält sämtliche Stimmen und Wiedergaben auf dem gewählten Gerät. Eine garantierte Trennung der Dozentenstimme ist nicht enthalten. Nur erlaubte Aufnahmen starten. Der Vorlesungsmodus und die neue Sprachtafel sind noch nicht in einer echten Teams-Sitzung bzw. bezahlten Realtime-Sitzung erprobt; Medienverarbeitung, Abbruchrettung und Oberflächen wurden mit synthetischen Daten getestet.
+
+Beide PCs auf 0.3.0 aktualisieren, bevor neue Seminardaten abgeglichen werden. Konten, Schlüssel und Lernfortschritt bleiben lokal. Das Differenzupdate basiert auf 0.2.5 und enthält geänderte/neue Dateien; fehlende Zwischenversionen werden bei Bedarf nachgeladen.
+
 ## 0.2.5
 
 - Mathematikdarstellung in Tutor, Zusammenfassungen, Aufgaben, Quiz-Optionen und Karteikarten: Brüche, Wurzeln, Indizes, Integrale, Summen, Matrizen und griechische Zeichen. Mehrere übliche LaTeX-Begrenzungen werden erkannt.

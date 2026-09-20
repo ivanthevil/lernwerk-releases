@@ -35,3 +35,9 @@ Dieses Repository enthält ausschließlich Downloads, Versionsinformationen und 
 Die Update-Funktion fragt die öffentliche GitHub-Release-API ab; dafür ist keine GitHub-Anmeldung nötig. KI-Inhalte gehen bei angeforderten KI-Aktionen an den konfigurierten Anbieter. Google Drive und Outlook werden nur nach Einrichtung verwendet.
 
 [Versionshinweise](CHANGELOG.md) · [Open-Source-Bibliotheken](THIRD-PARTY.md)
+
+## Seminarbegleitung ab 0.3.0
+
+In einem Modul stehen **Prüfungstipps**, **Termine & Aufgaben** und unter **Lernen** der **KI-Lehrer**, **Rechenaufgaben** und **Vorlesungsmodus** bereit. Modul bearbeiten/löschen steht oben im Modul; einzelne Quellen lassen sich verschieben oder löschen. Für die neuen gemeinsamen Daten bitte beide PCs aktualisieren.
+
+Der Vorlesungsmodus ist eine Vorschau für die lokale Windows-App. Präsentationsfenster und Folienausschnitt ausdrücklich auswählen, Aufnahmeberechtigung bestätigen und zuerst eine kurze Testaufnahme machen. Andere Stimmen auf dem gewählten Audiogerät werden ebenfalls aufgenommen. Bild bei Ende der Präsentation ausblenden; keine automatische Teilnehmererkennung. Die Sprachtafel benötigt Realtime-Modellzugang und wurde noch nicht in einem bezahlten Live-Gespräch erprobt. Details und weitere Grenzen stehen in den Versionshinweisen.

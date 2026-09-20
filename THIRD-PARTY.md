@@ -48,3 +48,7 @@ Die archivierten Quellen von Qt 6.11.2 (einschließlich Chromium), PySide/Shibok
 Qt/PySide, Shiboken, FFmpeg und GEOS bleiben dynamisch geladen und austauschbar. Lernwerk schließen und ABI-kompatible eigene Builds im Programmordner unter `_internal/PySide6`, `_internal/shiboken6`, `_internal/av.libs` bzw. `_internal/shapely.libs` ersetzen. Kopien vorher sichern. Änderungen an diesen Bibliotheken und das dafür notwendige Debugging/Reverse Engineering sind nicht beschränkt. Es wird kein Signaturschutz oder anderer Sperrmechanismus für diese Bibliotheken eingesetzt.
 
 Für PyAV wurden ausschließlich die DLL-Importnamen in den Windows-Erweiterungen angepasst: die von delvewheel angehängten Hashnamen wurden durch die unveränderten FFmpeg-ABI-Namen ersetzt. Das mitgelieferte Skript `prepare_lgpl_av.py` im Bibliotheksquellenpaket dokumentiert die reproduzierbare Anpassung. FFmpeg selbst ist der unveränderte LGPL-Shared-Build von BtbN (2026-09-15), ohne libx264/libx265. Die Konfiguration und Buildskripte liegen bei den Quellen. Qt/PySide können aus den offiziellen Quellen mit den beiliegenden Build-Anleitungen erstellt werden; `qtattributionsscanner` erzeugt die weitergehenden Drittanbieterhinweise.
+
+## Windows-Audioaufnahme
+
+PyAudioWPatch 0.2.12.8 (Apache-2.0, mit ursprünglichen PyAudio-Anteilen unter MIT) und PortAudio (MIT), Quelle: https://github.com/s0d3s/PyAudioWPatch/ . Lizenztexte liegen unter assets/licenses/lernwerk/PyAudioWPatch. Die Aufnahme verwendet WASAPI-Loopback des gewählten Wiedergabegeräts.
