@@ -24,6 +24,8 @@ Unterbrochene Update-Downloads können ab Version 0.2.3 fortgesetzt werden, auch
 
 Konten, Lernfortschritt, Dateien und Einstellungen liegen getrennt vom Programm. Updates und die Deinstallation behalten diese Daten. Standardordner: `%LOCALAPPDATA%\Lernwerk`; eine vorhandene, von Windows umgeleitete Datenablage wird wiederverwendet. Regelmäßige eigene Datensicherungen sind möglich, indem die App beendet und der gesamte Datenordner kopiert wird.
 
+Ab Version 0.3.3 lädt das App-Fenster nach einem Update zuverlässig die neue Oberfläche. Die Version steht im Fenstertitel. Bei Bedarf lädt **Lernwerk → Ansicht neu laden** (Strg+R oder F5) die Ansicht ohne Zwischenspeicher neu. Falls eine ältere App nach einem Update noch unverändert aussieht: auf eine freie Stelle im Inhalt rechtsklicken und **Reload** wählen. Anmeldung und Lerndaten bleiben dabei erhalten.
+
 ## Gemeinsames Lernen
 
 Google Drive kann direkt aus Lernwerk verbunden werden; Drive Desktop ist nicht erforderlich. Beide Personen richten ihr eigenes lokales Konto ein und verbinden denselben freigegebenen Lernordner. Module, Quellen und Lernmaterial können geteilt werden. Persönlicher Lernfortschritt und lokale Anmeldung bleiben getrennt. Die einmalige Google-OAuth-Einrichtung ist in der mitinstallierten Anleitung beschrieben.

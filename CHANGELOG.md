@@ -1,5 +1,17 @@
 # Versionshinweise
 
+## 0.3.3
+
+Behebt einen Fehler, durch den nach einem erfolgreichen Update noch die alte Oberfläche angezeigt werden konnte.
+
+- Die Windows-App lädt beim Start die Oberfläche der installierten Version und umgeht alte zwischengespeicherte Startseiten.
+- Die Startseite wird künftig nicht mehr im Browser-Zwischenspeicher abgelegt.
+- Neu im Menü **Lernwerk → Ansicht neu laden**, auch über **Strg+R** oder **F5** erreichbar.
+- Die installierte Version steht jetzt im Fenstertitel.
+
+Enthält alle Verbesserungen aus 0.3.2. Anmeldung, Lernfortschritt und Unterlagen bleiben erhalten. Das Differenzupdate enthält nur neue oder geänderte Programmdateien; fehlende Basisdateien werden bei Bedarf nachgeladen.
+
+
 ## 0.3.2 – Klarere Bedienung und schnellerer Abgleich
 
 Dieses Update verbessert die Bedienung beim gemeinsamen Lernen:
