@@ -1,5 +1,18 @@
 # Versionshinweise
 
+## 0.3.4
+
+Rechenaufgaben waren gespeichert, wurden auf der Materialseite aber fälschlich wie Zusammenfassungen angezeigt. Dieses Update zeigt wieder die Aufgabenanzahl und „Starten / fortsetzen“, auch für bereits erstellte Rechenaufgaben.
+
+- **Originalaufgaben übernehmen:** In der Quelle oder unter Quellen → Aktionen lässt sich ein vollständiges Übungsblatt übernehmen. Alle Abschnitte werden bearbeitet; erkannte Aufgaben und Teilaufgaben werden einzeln mit Originalnummer, Quellenbezug und Lösungsweg aufbereitet. Die bisherige Begrenzung auf 20 neu erzeugte Aufgaben gilt für diesen Import nicht.
+- **Automatisch nach Upload:** Bei aktivierter automatischer Erkennung werden Übungslehrbriefe nach der Dateiverarbeitung übernommen. Dafür werden euer API-Zugang und das eingestellte Budget genutzt. Bereits vorhandene Dateien lassen sich über den neuen Knopf übernehmen, ohne erneut hochzuladen.
+- **Nachvollziehbarer Stand:** Seiten-/Abschnittszähler, Aufgabenverzeichnis und Hinweise auf unklare Stellen. Unterbrochene Importe lassen sich fortsetzen; fertige Aufgaben bleiben erhalten und werden nicht erneut berechnet. Die Aufgabenliste sollte mit dem Original verglichen werden: KI-Erkennung garantiert keine Vollständigkeit oder fehlerfreien Lösungen.
+- **Mathematik:** Zahlenresultate direkt prüfen, symbolische Aufgaben mit Formeleditor bearbeiten. Unklare Originalaufgaben werden bei der Auswertung nicht bewertet. Umfangreiche Aufgabensätze werden in kleineren Gruppen korrigiert.
+- **Tafel direkt an der Aufgabe:** „Schrittweise an der Tafel erklären“ zeigt den Tutor mit Formeln, Pfeilen und abspielbaren Schritten. Danach lässt sich im Lehrer-Dialog weiterfragen. Diese Funktion nutzt die bestehende Tafelanimation, keinen generierten Videofilm.
+
+Enthält die Cache-Korrektur aus 0.3.3. Differenzupdate mit neuen/geänderten Programmdateien; bestehende Konten, Unterlagen und Lernfortschritte bleiben erhalten.
+
+
 ## 0.3.3
 
 Behebt einen Fehler, durch den nach einem erfolgreichen Update noch die alte Oberfläche angezeigt werden konnte.
