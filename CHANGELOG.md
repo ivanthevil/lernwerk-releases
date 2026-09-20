@@ -1,5 +1,20 @@
 # Versionshinweise
 
+## 0.3.1
+
+Lernwerk 0.3.1 ergänzt die Wiederherstellung des eigenen Kontozugangs.
+
+- **Passwort vergessen?** ist direkt in der Anmeldung erreichbar. Bestätigung in der lokalen Windows-App oder ein zuvor gespeicherter Wiederherstellungscode erlaubt das Festlegen eines neuen Passworts.
+- **Anmeldename vergessen:** Bei der Bestätigung in Windows kann das vorhandene lokale Konto ausgewählt werden. Nach erfolgreicher Wiederherstellung wird der Anmeldename angezeigt.
+- **Mein Konto & Passwort** in den Einstellungen: Passwort ändern und einen persönlichen Wiederherstellungscode erstellen oder erneuern. Der Code wird einmal angezeigt und kann als Textdatei gesichert werden. Er wird nur gehasht gespeichert und nicht über Drive geteilt.
+- Die Wiederherstellung verwendet die Datenbank des laufenden Lernbereichs. Konto-ID, Module, Dateien und Lernfortschritt bleiben erhalten. Alte Anmeldungen und Wiederherstellungscodes werden nach einer Passwortänderung ungültig.
+- Native Bestätigungen sind auf lokale Anfragen beschränkt, müssen im Windows-Fenster ausdrücklich bestätigt werden und verfallen nach fünf Minuten. Codes sind nur einmal verwendbar. Fehlversuche werden begrenzt.
+
+Ein E-Mail-Versand wird nicht benötigt. Ohne vorherigen Code muss die lokale Windows-App auf dem PC des Kontos laufen. Das Passwort wird vom Nutzer selbst eingegeben; ein vergessenes Passwort kann nicht ausgelesen werden.
+
+Differenzupdate auf Basis von 0.3.0. Der bestehende Zugang wird beim Update nicht geändert. Anmeldung, Wiederherstellung und Datenerhalt wurden mit isolierten Testkonten geprüft.
+
+
 ## 0.3.0
 
 Lernwerk 0.3.0 verbindet Seminarorganisation, Rechenübungen und einen interaktiven Lehrer.

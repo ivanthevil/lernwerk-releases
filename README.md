@@ -41,3 +41,9 @@ Die Update-Funktion fragt die öffentliche GitHub-Release-API ab; dafür ist kei
 In einem Modul stehen **Prüfungstipps**, **Termine & Aufgaben** und unter **Lernen** der **KI-Lehrer**, **Rechenaufgaben** und **Vorlesungsmodus** bereit. Modul bearbeiten/löschen steht oben im Modul; einzelne Quellen lassen sich verschieben oder löschen. Für die neuen gemeinsamen Daten bitte beide PCs aktualisieren.
 
 Der Vorlesungsmodus ist eine Vorschau für die lokale Windows-App. Präsentationsfenster und Folienausschnitt ausdrücklich auswählen, Aufnahmeberechtigung bestätigen und zuerst eine kurze Testaufnahme machen. Andere Stimmen auf dem gewählten Audiogerät werden ebenfalls aufgenommen. Bild bei Ende der Präsentation ausblenden; keine automatische Teilnehmererkennung. Die Sprachtafel benötigt Realtime-Modellzugang und wurde noch nicht in einem bezahlten Live-Gespräch erprobt. Details und weitere Grenzen stehen in den Versionshinweisen.
+
+## Passwort vergessen
+
+Ab Version 0.3.1 findest du in der Anmeldung **Passwort vergessen?**. Bestätige die Anfrage im lokalen Lernwerk-Windows-Fenster oder verwende deinen zuvor gesicherten Wiederherstellungscode. Danach setzt du selbst ein neues Passwort. Dein Konto und dein Lernfortschritt bleiben erhalten.
+
+Unter **Einstellungen → Mein Konto & Passwort** kannst du einen Code erstellen und sicher ablegen. Jeder Code gilt nur für das eigene lokale Konto, wird nicht über Drive geteilt und ist nur einmal verwendbar. Eine Passwortänderung macht alte Anmeldungen und den bisherigen Code ungültig.
