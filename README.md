@@ -14,6 +14,8 @@ Das Paket ist derzeit nicht mit einem Code-Signing-Zertifikat signiert; Windows 
 
 ## Updates
 
+Seit Version 0.3.5 können Formeln in Rechenaufgaben direkt visuell eingegeben werden: Brüche, Wurzeln, Potenzen und einzelne Rechenschritte. Bestehende Eingaben bleiben erhalten. Einheiten wie `m^2` werden in Lerntexten, Aufgaben, Beschriftungen und dem mathematischen PDF-Druck als m² dargestellt.
+
 Ab Version 0.2.0 prüft die Windows-App nach dem Start und anschließend alle sechs Stunden auf neue Versionen. In **Einstellungen → Lernwerk aktualisieren** lässt sich die Prüfung auch manuell starten oder abschalten.
 
 Eine neue Version wird in der App angezeigt. **Herunterladen & installieren** lädt den Installer, prüft seine SHA-256-Prüfsumme und öffnet den Installationsassistenten. Lernwerk schließt sich dazu. Laufende Aufgaben und Sprachgespräche müssen vorher beendet werden. Updates werden nicht ohne Klick installiert.
